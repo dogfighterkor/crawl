@@ -19,4 +19,5 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('crawler/', include('crawler.urls')),
+    path('', include('mysite.urls')),
 ]

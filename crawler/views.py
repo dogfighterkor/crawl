@@ -4,5 +4,7 @@ from django.contrib.auth.models import User
 from .crawler import run
 
 def crawling(request):
-	run()
-	return render(request, 'index.html', {})
+	ip = request.META.get('REMOTE_ADDR')
+	if ip == '127.0.0.1':
+		run()
+	return render(request, 'crawler/index.html', {})
