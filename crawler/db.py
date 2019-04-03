@@ -12,9 +12,9 @@ def save(title, date, point, site):
 	try :
 		movie = Movie.objects.get(title=title)
 	except Movie.DoesNotExist:
-		movie = Movie.objects.create(title=title, realesedate=date)	
+		movie = Movie.objects.create(title=title, releasedate=date)	
 	except ObjectDoesNotExist:
-		movie = Movie.objects.create(title=title, realesedate=date)	
+		movie = Movie.objects.create(title=title, releasedate=date)	
 	except Exception as ex:
 		print("Exception : " , ex)		
 

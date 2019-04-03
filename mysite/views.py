@@ -3,7 +3,7 @@ from django.utils import timezone
 from crawler.models import Movie
 
 def main(request):
-	movie = Movie.objects.filter(realesedate__lte=timezone.now()).order_by('-realesedate')
+	movie = Movie.objects.filter(releasedate__lte=timezone.now()).order_by('-releasedate')
 	movie = movie[:20]
 	return render(request, 'mysite/index.html', {'movies': movie})
 			
